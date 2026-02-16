@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEIRO Lean Matrix Master Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#0099ff;
+--secondary:#ffffff;
+--glass:rgba(255,255,255,0.06);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#000;
+color:#e2e8f0;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* ================= MATRIX ================= */
+.matrix-rain{
+position:fixed;
+inset:0;
+z-index:-1;
+pointer-events:none;
+overflow:hidden;
+}
+
+.rain-drop{
+position:absolute;
+color:#0099ff;
+font-family:monospace;
+font-weight:700;
+opacity:0.9;
+animation:fall linear infinite;
+text-shadow:0 0 8px #0099ff;
+}
+
+@keyframes fall{
+0%{transform:translateY(-150vh);opacity:1;}
+100%{transform:translateY(150vh);opacity:0;}
+}
+
+/* ================= COMPACT HEADER ================= */
+
+header{
+height:45vh;
+min-height:320px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#050505,#0f172a,#16213e);
+text-align:center;
+padding:30px 15px;
+}
+
+.logo-wrapper{
+width:110px;
+height:110px;
+border-radius:50%;
+border:2px solid var(--secondary);
+box-shadow:0 0 25px var(--primary);
+position:relative;
+overflow:hidden;
+margin-bottom:15px;
+}
+
+.logo-svg{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+transition:opacity 1s ease;
+}
+
+.logo-2{opacity:0;}
+
+h1{
+font-family:'Orbitron',monospace;
+font-size:clamp(1.8rem,4vw,2.4rem);
+color:var(--primary);
+text-shadow:0 0 15px var(--primary);
+}
+
+.tagline{
+letter-spacing:2px;
+font-size:clamp(0.8rem,2.5vw,1rem);
+opacity:0.9;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+padding:70px 15px;
+text-align:center;
+}
+
+.card{
+background:var(--glass);
+backdrop-filter:blur(20px);
+margin:30px auto;
+padding:40px;
+border-radius:20px;
+max-width:1100px;
+width:100%;
+box-shadow:0 0 40px rgba(0,153,255,0.3);
+}
+
+h2{
+color:var(--primary);
+margin-bottom:20px;
+}
+
+ul{
+list-style:none;
+text-align:left;
+max-width:900px;
+margin:auto;
+}
+
+li{
+margin:10px 0;
+padding:10px;
+border-left:3px solid var(--primary);
+}
+
+/* FLOW */
+.flow{
+background:var(--primary);
+padding:15px;
+margin:15px auto;
+width:90%;
+max-width:500px;
+border-radius:10px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(0,153,255,0.7);}
+70%{box-shadow:0 0 0 20px rgba(0,153,255,0);}
+100%{box-shadow:0 0 0 0 rgba(0,153,255,0);}
+}
+
+/* PDCA */
+.pdca{
+width:clamp(200px,50vw,280px);
+height:clamp(200px,50vw,280px);
+border-radius:50%;
+border:10px solid var(--primary);
+margin:40px auto;
+position:relative;
+animation:rotate 10s linear infinite;
+}
+
+@keyframes rotate{
+from{transform:rotate(0);}
+to{transform:rotate(360deg);}
+}
+
+.pdca span{
+position:absolute;
+font-weight:700;
+}
+
+.plan{top:5%;left:40%;}
+.do{right:5%;top:45%;}
+.check{bottom:5%;left:35%;}
+.act{left:5%;top:45%;}
+
+</style>
+</head>
+
+<body>
+
+<div class="matrix-rain" id="matrixRain"></div>
+
+<header>
+<div class="logo-wrapper">
+<svg class="logo-svg logo-1" viewBox="0 0 120 120">
+<circle cx="60" cy="60" r="46" fill="none" stroke="#0099ff" stroke-width="3"/>
+<text x="60" y="73" text-anchor="middle" fill="#0099ff" font-size="34" font-weight="700">A</text>
+</svg>
+
+<svg class="logo-svg logo-2" viewBox="0 0 120 120">
+<polygon points="60,12 90,40 90,84 60,108 30,84 30,40" fill="none" stroke="#0099ff" stroke-width="3"/>
+</svg>
+</div>
+
+<h1>APEIRO</h1>
+<div class="tagline">Lean Matrix Masterclass</div>
+</header>
+
+<section class="card">
+<h2>What is Lean Management?</h2>
+<ul>
+<li>Lean is a philosophy focused on maximizing customer value while minimizing waste.</li>
+<li>Originated from the Toyota Production System.</li>
+<li>Delivers more value with fewer resources.</li>
+<li>Improves quality, speed, and operational efficiency.</li>
+<li>Builds a culture of continuous improvement.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>5 Core Principles</h2>
+<ul>
+<li>Define Value – Understand what the customer values.</li>
+<li>Map Value Stream – Remove non-value-added activities.</li>
+<li>Create Flow – Ensure smooth workflow.</li>
+<li>Establish Pull – Produce only when needed.</li>
+<li>Pursue Perfection – Continuous improvement.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>8 Wastes (DOWNTIME)</h2>
+<ul>
+<li>Defects</li>
+<li>Overproduction</li>
+<li>Waiting</li>
+<li>Non-utilized Talent</li>
+<li>Transportation</li>
+<li>Inventory</li>
+<li>Motion</li>
+<li>Extra Processing</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Structured Problem Solving</h2>
+<div class="flow">Identify Problem</div>
+<div class="flow">Understand Problem</div>
+<div class="flow">Analyze Root Cause</div>
+<div class="flow">Develop Strategy</div>
+<div class="flow">Implement & Prevent Recurrence</div>
+</section>
+
+<section class="card">
+<h2>PDCA Continuous Improvement</h2>
+<div class="pdca">
+<span class="plan">PLAN</span>
+<span class="do">DO</span>
+<span class="check">CHECK</span>
+<span class="act">ACT</span>
+</div>
+</section>
+
+<script>
+
+/* MATRIX RAIN */
+const container=document.getElementById('matrixRain');
+const letters=['A','P','E','I','R','O'];
+
+function createDrop(){
+const drop=document.createElement('div');
+drop.className='rain-drop';
+drop.style.left=Math.random()*100+'%';
+drop.style.fontSize=(Math.random()*8+10)+'px';
+drop.style.animationDuration=(Math.random()*3+2)+'s';
+drop.textContent=letters[Math.floor(Math.random()*letters.length)];
+container.appendChild(drop);
+setTimeout(()=>{drop.remove();},4000);
+}
+
+for(let i=0;i<60;i++){setTimeout(createDrop,i*20);}
+setInterval(createDrop,80);
+
+/* LOGO MORPH */
+const logo1=document.querySelector('.logo-1');
+const logo2=document.querySelector('.logo-2');
+let showFirst=true;
+
+setInterval(()=>{
+logo1.style.opacity=showFirst?'0':'1';
+logo2.style.opacity=showFirst?'1':'0';
+showFirst=!showFirst;
+},2500);
+
+</script>
+
+</body>
+</html>
